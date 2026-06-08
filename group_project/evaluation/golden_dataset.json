@@ -1,17 +1,121 @@
 [
   {
-    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự?",
-    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc chất ma tuý khác với khối lượng tương đương.",
-    "expected_context": "Bộ luật Hình sự 2015, Điều 249"
+    "id": "Q01",
+    "category": "legal",
+    "question": "Tội tàng trữ trái phép chất ma tuý theo Điều 248 bị phạt tù bao nhiêu năm?",
+    "expected_answer": "Theo Điều 248 Bộ luật Hình sự, tội tàng trữ trái phép chất ma tuý có thể bị phạt tù từ 1 đến 5 năm (khoản 1), từ 5 đến 10 năm (khoản 2), từ 10 đến 15 năm (khoản 3), hoặc từ 15 đến 20 năm, tù chung thân hoặc tử hình (khoản 4) tuỳ theo khối lượng chất ma tuý và tình tiết tăng nặng.",
+    "expected_context": "Điều 248 Bộ luật Hình sự quy định về tội tàng trữ trái phép chất ma tuý với các mức hình phạt tù từ 1-5 năm, 5-10 năm, 10-15 năm và tù chung thân hoặc tử hình tùy theo số lượng."
   },
   {
-    "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
-    "expected_answer": "Cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện.",
-    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V"
+    "id": "Q02",
+    "category": "legal",
+    "question": "Tội mua bán trái phép chất ma tuý bị xử lý thế nào theo pháp luật Việt Nam?",
+    "expected_answer": "Tội mua bán trái phép chất ma tuý được quy định tại Điều 251 Bộ luật Hình sự với hình phạt tù từ 2 đến 7 năm, 7 đến 15 năm, 15 đến 20 năm hoặc tù chung thân/tử hình, tuỳ số lượng chất ma tuý.",
+    "expected_context": "Điều 251 Bộ luật Hình sự quy định tội mua bán trái phép chất ma tuý có thể bị tử hình nếu số lượng lớn."
   },
   {
-    "question": "Danh mục các chất ma tuý thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
-    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự.",
-    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I"
+    "id": "Q03",
+    "category": "legal",
+    "question": "Cai nghiện ma tuý bắt buộc được áp dụng cho đối tượng nào?",
+    "expected_answer": "Theo Nghị định 105/2021/NĐ-CP, biện pháp cai nghiện ma tuý bắt buộc áp dụng cho người nghiện ma tuý từ đủ 18 tuổi trở lên khi không đăng ký cai nghiện tự nguyện, đã cai nghiện tự nguyện nhưng tái nghiện, hoặc không có nơi cư trú ổn định.",
+    "expected_context": "Nghị định 105/2021/NĐ-CP quy định người nghiện từ 18 tuổi không tự nguyện cai nghiện hoặc tái nghiện bị áp dụng cai nghiện bắt buộc."
+  },
+  {
+    "id": "Q04",
+    "category": "legal",
+    "question": "Thời hạn cai nghiện bắt buộc tại cơ sở cai nghiện là bao lâu?",
+    "expected_answer": "Theo Nghị định 105/2021/NĐ-CP, thời hạn cai nghiện bắt buộc là từ 12 đến 24 tháng.",
+    "expected_context": "Nghị định 105/2021 quy định thời hạn cai nghiện bắt buộc từ 12 đến 24 tháng tại cơ sở cai nghiện ma tuý."
+  },
+  {
+    "id": "Q05",
+    "category": "legal",
+    "question": "Tội trồng cây thuốc phiện bị xử lý thế nào theo Điều 247?",
+    "expected_answer": "Điều 247 Bộ luật Hình sự quy định người nào trồng cây thuốc phiện, cây côca, cây cần sa hoặc các loại cây khác có chứa chất ma tuý đã bị xử phạt vi phạm hành chính hoặc đã bị kết án mà còn vi phạm thì bị phạt tù từ 6 tháng đến 3 năm.",
+    "expected_context": "Điều 247 quy định tội trồng cây có chứa chất ma tuý bị phạt tù từ 6 tháng đến 3 năm."
+  },
+  {
+    "id": "Q06",
+    "category": "legal",
+    "question": "Luật Phòng chống ma tuý 2021 quy định chất ma tuý là gì?",
+    "expected_answer": "Theo Luật Phòng, chống ma tuý 2021, chất ma tuý là các chất gây nghiện, chất hướng thần được quy định trong các danh mục do Chính phủ ban hành. Luật này thay thế Luật Phòng, chống ma tuý 2000 và có hiệu lực từ ngày 1/1/2022.",
+    "expected_context": "Luật Phòng, chống ma tuý số 73/2021/QH14 định nghĩa chất ma tuý và tiền chất, quy định về phòng ngừa, kiểm soát, cai nghiện."
+  },
+  {
+    "id": "Q07",
+    "category": "legal",
+    "question": "Người sử dụng ma tuý có bị truy cứu trách nhiệm hình sự không?",
+    "expected_answer": "Theo pháp luật hiện hành, hành vi sử dụng ma tuý không bị truy cứu trách nhiệm hình sự mà chỉ bị xử phạt vi phạm hành chính. Tuy nhiên, người nghiện ma tuý có thể bị áp dụng biện pháp cai nghiện bắt buộc. Chỉ các hành vi tàng trữ, vận chuyển, mua bán mới bị xử lý hình sự.",
+    "expected_context": "Điều 248-256 Bộ luật Hình sự không quy định tội sử dụng ma tuý, chỉ xử lý hành chính. Cai nghiện bắt buộc áp dụng với người nghiện."
+  },
+  {
+    "id": "Q08",
+    "category": "legal",
+    "question": "Tội vận chuyển trái phép chất ma tuý bị xử lý ra sao?",
+    "expected_answer": "Tội vận chuyển trái phép chất ma tuý quy định tại Điều 250 Bộ luật Hình sự với hình phạt từ 2 đến 7 năm tù (khoản 1), từ 7 đến 15 năm (khoản 2), từ 15 đến 20 năm hoặc tù chung thân (khoản 3), tử hình đối với trường hợp đặc biệt nghiêm trọng (khoản 4).",
+    "expected_context": "Điều 250 BLHS quy định tội vận chuyển trái phép chất ma tuý với các khung hình phạt từ 2 năm đến tử hình."
+  },
+  {
+    "id": "Q09",
+    "category": "news",
+    "question": "Ca sĩ Chi Dân bị bắt vì lý do gì?",
+    "expected_answer": "Ca sĩ Chi Dân và nhiều người khác bị bắt liên quan đến việc tổ chức và sử dụng ma tuý. Vụ việc liên quan đến việc anh em Chi Dân rủ rê nhiều người cùng chơi ma tuý.",
+    "expected_context": "Anh em ca sĩ Chi Dân bị bắt vì rủ nhiều người chơi ma tuý, gây xôn xao làng giải trí Việt Nam."
+  },
+  {
+    "id": "Q10",
+    "category": "news",
+    "question": "Ca sĩ Miu Lê bị bắt trong hoàn cảnh nào?",
+    "expected_answer": "Ca sĩ Miu Lê bị bắt quả tang khi đang sử dụng ma tuý tại bãi biển đảo Cát Bà. Cô bị cáo buộc tổ chức sử dụng ma tuý. Sau đó Miu Lê đã lên tiếng xin lỗi khán giả.",
+    "expected_context": "Ca sĩ Miu Lê bị bắt quả tang dùng ma túy ở bãi biển Cát Bà, bị cáo buộc tổ chức sử dụng ma tuý."
+  },
+  {
+    "id": "Q11",
+    "category": "news",
+    "question": "Rapper Bình Gold có liên quan đến ma tuý như thế nào?",
+    "expected_answer": "Rapper Bình Gold dương tính với ma tuý khi lái xe trên cao tốc và tiếp tục bị phát hiện dương tính lần sau. Ngoài ra anh còn bị cáo buộc cướp taxi trong trạng thái sử dụng ma tuý.",
+    "expected_context": "Rapper Bình Gold dương tính ma tuý khi lái xe trên cao tốc, sau đó tiếp tục dương tính và bị bắt vì cướp taxi."
+  },
+  {
+    "id": "Q12",
+    "category": "news",
+    "question": "Người mẫu Andrea Aybar bị bắt vì tội gì?",
+    "expected_answer": "Người mẫu Andrea Aybar cùng trợ lý bị bắt vì tổ chức tiệc ma tuý trong căn hộ cao cấp.",
+    "expected_context": "Người mẫu Andrea Aybar và trợ lý bị bắt vì tổ chức sử dụng ma tuý trong căn hộ cao cấp."
+  },
+  {
+    "id": "Q13",
+    "category": "news",
+    "question": "Ca sĩ Long Nhật và Sơn Ngọc Minh bị bắt vì lý do gì?",
+    "expected_answer": "Ca sĩ Long Nhật và Sơn Ngọc Minh bị bắt vì liên quan đến ma tuý, gây chấn động làng giải trí.",
+    "expected_context": "Ca sĩ Long Nhật và Sơn Ngọc Minh bị bắt vì liên quan ma tuý."
+  },
+  {
+    "id": "Q14",
+    "category": "mixed",
+    "question": "Tại sao cùng sử dụng ma tuý có người đi tù, có người không?",
+    "expected_answer": "Theo pháp luật Việt Nam, hành vi sử dụng ma tuý đơn thuần chỉ bị xử phạt hành chính, không bị truy cứu hình sự. Tuy nhiên nếu kết hợp với hành vi tàng trữ, mua bán, tổ chức sử dụng, hoặc có tiền án tiền sự thì mới bị truy tố hình sự. Đây là lý do có người cùng sử dụng nhưng bị xử lý khác nhau.",
+    "expected_context": "Sử dụng ma tuý chỉ bị xử phạt hành chính; tàng trữ, mua bán, tổ chức sử dụng mới bị truy cứu hình sự theo BLHS."
+  },
+  {
+    "id": "Q15",
+    "category": "legal",
+    "question": "Cai nghiện tự nguyện tại gia đình kéo dài bao lâu?",
+    "expected_answer": "Theo Nghị định 105/2021/NĐ-CP, thời gian cai nghiện tự nguyện tại gia đình và cộng đồng tối thiểu là 06 tháng.",
+    "expected_context": "Nghị định 105/2021 quy định thời gian cai nghiện tự nguyện tại gia đình tối thiểu 6 tháng."
+  },
+  {
+    "id": "Q16",
+    "category": "legal",
+    "question": "Tội sản xuất trái phép chất ma tuý bị xử lý thế nào?",
+    "expected_answer": "Tội sản xuất trái phép chất ma tuý quy định tại Điều 248 Bộ luật Hình sự, với mức hình phạt cao nhất là tử hình đối với trường hợp sản xuất số lượng lớn hoặc có tổ chức.",
+    "expected_context": "Điều 248 BLHS quy định tội sản xuất ma tuý với hình phạt tối đa là tử hình."
+  },
+  {
+    "id": "Q17",
+    "category": "mixed",
+    "question": "Trong ngành giải trí Việt Nam, những ai đã bị liên quan đến vụ án ma tuý gần đây?",
+    "expected_answer": "Trong những năm gần đây, nhiều nghệ sĩ Việt bị bắt vì liên quan ma tuý bao gồm: ca sĩ Chi Dân (tổ chức sử dụng), ca sĩ Miu Lê (sử dụng tại Cát Bà), ca sĩ Long Nhật và Sơn Ngọc Minh, người mẫu Andrea Aybar (tổ chức tiệc ma tuý), rapper Bình Gold (dương tính khi lái xe, cướp taxi).",
+    "expected_context": "Nhiều nghệ sĩ Việt bị bắt vì ma tuý: Chi Dân, Miu Lê, Long Nhật, Sơn Ngọc Minh, Andrea Aybar, Bình Gold."
   }
 ]

@@ -1,0 +1,23 @@
+# https://vnexpress.net/rapper-binh-gold-tiep-tuc-duong-tinh-voi-ma-tuy-lai-cuop-taxi-4919259.html
+
+**Source:** https://vnexpress.net/rapper-binh-gold-tiep-tuc-duong-tinh-voi-ma-tuy-lai-cuop-taxi-4919259.html
+**Crawled:** 2026-06-08T11:49:29.843199
+
+---
+
+Ngày 26/7, Công an Hà Nội cho biết đang tạm giữ rapper Vũ Xuân Bình (Bình Gold) để điều tra về nhiều cáo buộc.
+Khoảng 9h10 hôm nay, Bình đón một chiếc taxi tại vệ đường ở phường Phú Thượng, đề nghị chở về Bắc Ninh. Khi đi được khoảng một km, Bình nhào lên lấy điện thoại của tài xế trên ghế phụ và dùng tay phải quàng vào cổ tài xế đe dọa.
+Bình yêu cầu chạy ra đường Phạm Văn Đồng và lên đường trên cao hướng về cầu Thanh Trì để đi tiếp tới Quảng Ninh. Khi đi qua lối rẽ hướng ra đại lộ Thăng Long khoảng 100 mét, do tắc đường, Bình yêu cầu lái xe đi vào làn khẩn cấp.
+Trong lúc này, phát hiện nghi phạm lơ là không để ý, nam tài xế tháo chạy khỏi xe. Bình nhảy lên ghế lái, điều khiển taxi đi theo hướng về cầu Thanh Trì.
+Nhảy xuống xe lúc 10h, nam tài xế gọi 113 báo công an. Tổ công tác Công an phường Đại Mỗ đã phối hợp với các đơn vị truy bắt.
+Khoảng 10h55 cùng ngày, cảnh sát bắt được Bình tại khu vực đường gom vành đai 3, tiếp giáp nghĩa trang Cự Khối ở phường Long Biên. Công an đã thu được tang vật do Bình cướp giật là chiếc taxi, điện thoại và ví của tài xế.
+Bình khai nhận hành vi. Kiểm tra nhanh, công an phát hiện anh ta dương tính với ma túy ketamin và cần sa.
+[](javascript:;) [](javascript:;) [](javascript:;)
+Rapper Bình Gold lúc bị bắt. Ảnh: _Công an cung cấp_
+Ba ngày trước, khoảng 18h ngày 23/7, Bình lái ôtô trên cao tốc Hà Nội - Lào Cai với tốc độ cao, lạng lách đánh võng, liên tục tạt đầu các xe di chuyển cùng chiều, có dấu hiệu gây rối trật tự công cộng. Hành vi này đã được camera hành trình của một số tài xế ghi lại và đăng lên mạng xã hội.
+Vào cuộc xác minh, truy tìm, đến gần 22h cùng ngày, cảnh sát dừng xe Bình trên địa phận Lào Cai. Kết quả kiểm tra cho thấy Bình dương tính với chất ma túy (cần sa, bồ đà). Ở vụ này, Bình bị bàn giao cho cơ quan chức năng tỉnh Lào Cai xử lý.
+Bình Gold, 28 tuổi, vốn là thợ xăm, bắt đầu được biết đến trên mạng từ những năm 2019 thông qua những bài rap. Phần lớn video âm nhạc của Bình mô tả cuộc sống giàu có, ăn chơi, bị khán giả chỉ trích vì sử dụng ca từ không phù hợp, gây tác động xấu đến người xem, nhất là trẻ em.
+[ ](https://vnexpress.net/rapper-binh-gold-duong-tinh-ma-tuy-khi-lai-xe-tren-cao-toc-4918203.html "Rapper Bình Gold dương tính ma túy khi lái xe trên cao tốc")
+#### [Rapper Bình Gold dương tính ma túy khi lái xe trên cao tốc](https://vnexpress.net/rapper-binh-gold-duong-tinh-ma-tuy-khi-lai-xe-tren-cao-toc-4918203.html "Rapper Bình Gold dương tính ma túy khi lái xe trên cao tốc")
+[Nam rapper chạy xe lạng lách trên cao tốc Nội Bài - Lào Cai, bị cảnh sát giao thông dừng xe kiểm tra và xác định dương tính với ma túy.](https://vnexpress.net/rapper-binh-gold-duong-tinh-ma-tuy-khi-lai-xe-tren-cao-toc-4918203.html "Rapper Bình Gold dương tính ma túy khi lái xe trên cao tốc") [ 32 ](https://vnexpress.net/rapper-binh-gold-duong-tinh-ma-tuy-khi-lai-xe-tren-cao-toc-4918203.html#box_comment_vne)
+**Phạm Dự**

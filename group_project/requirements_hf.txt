@@ -1,0 +1,23 @@
+# Requirements cho Hugging Face Spaces deployment
+# Chép file này thành requirements.txt ở root của HF Space repo
+
+# Core
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Embeddings & Vector Store
+sentence-transformers>=2.2.0
+chromadb>=0.5.0
+
+# BM25
+rank-bm25>=0.2.2
+
+# Generation
+openai>=1.30.0
+langchain-openai>=0.1.0
+
+# Streamlit UI
+streamlit>=1.35.0
+
+# RAG pipeline deps
+langchain-text-splitters>=0.2.0

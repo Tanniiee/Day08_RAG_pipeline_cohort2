@@ -1,57 +1,83 @@
 """
 Task 8 — PageIndex Vectorless RAG.
 
-Đăng ký tài khoản tại: https://pageindex.ai/
-SDK & sample code: https://github.com/VectifyAI/PageIndex
+PageIndex hoạt động khác hoàn toàn so với vector search:
+    - Không dùng embedding hay vector similarity
+    - Structural understanding của document (headings, tables, lists)
+    - Chỉ hỗ trợ file PDF
+    - Flow: submit_document(pdf) → submit_query → get_retrieval
 
-PageIndex cho phép RAG mà không cần vector store — sử dụng
-structural understanding của document thay vì embedding.
-
-Cài đặt:
-    pip install pageindex
-
-Hướng dẫn:
-    1. Đăng ký account tại pageindex.ai
-    2. Lấy API key
-    3. Upload documents
-    4. Query sử dụng PageIndex API
+API flow:
+    client = PageIndexClient(api_key)
+    doc    = client.submit_document(file_path)   → {"doc_id": ...}
+    query  = client.submit_query(doc_id, query)  → {"retrieval_id": ...}
+    result = client.get_retrieval(retrieval_id)  → {...}
 """
 
 import os
+import time
 from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
 
 PAGEINDEX_API_KEY = os.getenv("PAGEINDEX_API_KEY", "")
-STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
+
+# PageIndex chỉ nhận PDF → chỉ upload PDF gốc từ data/landing/legal/
+LANDING_LEGAL_DIR = Path(__file__).parent.parent / "data" / "landing" / "legal"
+CACHE_FILE = Path(__file__).parent.parent / "data" / ".pageindex_doc_ids"
 
 
-def upload_documents():
+def _get_client():
+    from pageindex import PageIndexClient
+    if not PAGEINDEX_API_KEY:
+        raise EnvironmentError(
+            "PAGEINDEX_API_KEY chưa set. Đăng ký tại https://pageindex.ai và thêm vào .env"
+        )
+    return PageIndexClient(api_key=PAGEINDEX_API_KEY)
+
+
+def upload_documents() -> list[str]:
     """
-    Upload toàn bộ markdown documents lên PageIndex.
+    Upload các file PDF pháp luật lên PageIndex.
+    Trả về list doc_id. Kết quả được cache để tránh upload lại.
     """
-    # TODO: Implement upload
-    #
-    # Tham khảo: https://github.com/VectifyAI/PageIndex
-    #
-    # from pageindex import PageIndex
-    #
-    # pi = PageIndex(api_key=PAGEINDEX_API_KEY)
-    #
-    # for md_file in STANDARDIZED_DIR.rglob("*.md"):
-    #     content = md_file.read_text(encoding="utf-8")
-    #     pi.upload(
-    #         content=content,
-    #         metadata={"filename": md_file.name, "type": md_file.parent.name}
-    #     )
-    #     print(f"  ✓ Uploaded: {md_file.name}")
-    raise NotImplementedError("Implement upload_documents")
+    # Đọc cache nếu có
+    if CACHE_FILE.exists():
+        doc_ids = CACHE_FILE.read_text().strip().splitlines()
+        doc_ids = [d for d in doc_ids if d.strip()]
+        if doc_ids:
+            print(f"  ✓ Dùng {len(doc_ids)} doc đã upload (cache)")
+            return doc_ids
+
+    client = _get_client()
+    doc_ids = []
+
+    # Chỉ upload PDF (PageIndex không hỗ trợ DOCX/MD)
+    pdf_files = sorted(LANDING_LEGAL_DIR.glob("*.pdf"))
+    if not pdf_files:
+        print(f"  ⚠ Không tìm thấy PDF trong {LANDING_LEGAL_DIR}")
+        return []
+
+    for pdf_file in pdf_files:
+        print(f"  Uploading: {pdf_file.name}")
+        try:
+            result = client.submit_document(file_path=str(pdf_file))
+            doc_id = result.get("doc_id") or result.get("id") or str(result)
+            doc_ids.append(doc_id)
+            print(f"    ✓ doc_id: {doc_id}")
+        except Exception as e:
+            print(f"    ✗ Lỗi: {e}")
+
+    # Lưu cache
+    CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+    CACHE_FILE.write_text("\n".join(doc_ids))
+    return doc_ids
 
 
 def pageindex_search(query: str, top_k: int = 5) -> list[dict]:
     """
-    Vectorless retrieval sử dụng PageIndex.
+    Vectorless retrieval sử dụng PageIndex (chỉ với file PDF pháp luật).
     Dùng làm fallback khi hybrid search không có kết quả tốt.
 
     Args:
@@ -59,41 +85,66 @@ def pageindex_search(query: str, top_k: int = 5) -> list[dict]:
         top_k: Số lượng kết quả tối đa
 
     Returns:
-        List of {
-            'content': str,
-            'score': float,
-            'metadata': dict,
-            'source': 'pageindex'   # Đánh dấu nguồn retrieval
-        }
+        List of {'content': str, 'score': float, 'metadata': dict, 'source': 'pageindex'}
     """
-    # TODO: Implement PageIndex query
-    #
-    # from pageindex import PageIndex
-    #
-    # pi = PageIndex(api_key=PAGEINDEX_API_KEY)
-    # results = pi.query(query=query, top_k=top_k)
-    #
-    # return [
-    #     {
-    #         "content": r.text,
-    #         "score": r.score,
-    #         "metadata": r.metadata,
-    #         "source": "pageindex"
-    #     }
-    #     for r in results
-    # ]
-    raise NotImplementedError("Implement pageindex_search")
+    client = _get_client()
+    doc_ids = upload_documents()
+
+    if not doc_ids:
+        return []
+
+    all_results = []
+
+    for doc_id in doc_ids:
+        try:
+            # Bước 1: Submit query
+            query_result = client.submit_query(doc_id=doc_id, query=query)
+            retrieval_id = (
+                query_result.get("retrieval_id")
+                or query_result.get("id")
+                or str(query_result)
+            )
+
+            # Bước 2: Poll cho đến khi có kết quả (tối đa 30s)
+            result = None
+            for _ in range(15):
+                result = client.get_retrieval(retrieval_id=retrieval_id)
+                status = result.get("status", "")
+                if status in ("completed", "done", "ready") or result.get("results"):
+                    break
+                time.sleep(2)
+
+            if not result:
+                continue
+
+            # Bước 3: Parse kết quả
+            items = result.get("results") or result.get("chunks") or []
+            for item in items[:top_k]:
+                content = item.get("text") or item.get("content") or str(item)
+                score = float(item.get("score", 1.0))
+                all_results.append({
+                    "content": content,
+                    "score": score,
+                    "metadata": {"doc_id": doc_id, **item.get("metadata", {})},
+                    "source": "pageindex",
+                })
+
+        except Exception as e:
+            print(f"  ✗ Query lỗi (doc_id={doc_id}): {e}")
+            continue
+
+    all_results.sort(key=lambda x: x["score"], reverse=True)
+    return all_results[:top_k]
 
 
 if __name__ == "__main__":
     if not PAGEINDEX_API_KEY:
         print("⚠ Hãy set PAGEINDEX_API_KEY trong file .env")
-        print("  Đăng ký tại: https://pageindex.ai/")
     else:
-        print("Uploading documents...")
-        upload_documents()
-
-        print("\nTest query:")
+        print("Test PageIndex search:")
         results = pageindex_search("hình phạt sử dụng ma tuý", top_k=3)
-        for r in results:
-            print(f"[{r['score']:.3f}] {r['content'][:100]}...")
+        if results:
+            for r in results:
+                print(f"[{r['score']:.3f}] {r['content'][:100]}...")
+        else:
+            print("(không có kết quả)")
